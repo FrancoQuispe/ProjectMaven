@@ -24,4 +24,10 @@ public class UserServicesImpl implements UserServices {
 
 		return this.userRepository.findAll();
 	}
+
+	@Override
+	public void eliminarCliente(Long id) {
+		
+		this.userRepository.deleteById(id);
+	}
 }

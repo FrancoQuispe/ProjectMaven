@@ -49,6 +49,22 @@ public class UserController {
 		return this.userServices.findAll();
 	}
 	
+	@RequestMapping(value = "/eliminarCliente", method = RequestMethod.POST)
+	public void eliminarCliente(@RequestBody String userJson) throws Exception
+	{
+		
+		this.mapper = new ObjectMapper();
+		Cliente cliente = this.mapper.readValue(userJson, Cliente.class);
+		
+		if(cliente.getID() == null)
+		{
+			throw new Exception("El id esta nulo");
+		}
+		
+		this.userServices.eliminarCliente(cliente.getID());
+		
+	}
+	
 	private boolean validate(Cliente cliente) {
 		
 		boolean isValid = true;
