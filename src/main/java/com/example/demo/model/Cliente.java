@@ -6,10 +6,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+
 @Entity
-@Table(name="Cliente")
+@Table(name="clientes")
 @Access(AccessType.FIELD)
-public class Cliente extends EntidadPadre{
+public class Cliente extends EntidadPadre {
 
 	private static final long serialVersionUID = -6964561186681602977L;
 	
@@ -29,6 +30,4 @@ public class Cliente extends EntidadPadre{
 	public void setTelefonoCliente(String telefonoCliente) {
 		this.telefonoCliente = telefonoCliente;
 	}
-	
-	
 }

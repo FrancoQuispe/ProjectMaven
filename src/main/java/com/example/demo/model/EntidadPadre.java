@@ -20,13 +20,13 @@ public class EntidadPadre implements Serializable{
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="ID", unique=true, nullable = false)
 	
-	private Long ID;
+	private Long id;
 
 	public Long getID() {
-		return ID;
+		return id;
 	}
 
 	public void setID(Long iD) {
-		ID = iD;
+		id = iD;
 	}
 }
