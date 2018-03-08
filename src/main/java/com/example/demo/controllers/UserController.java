@@ -1,6 +1,7 @@
 package com.example.demo.controllers;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Cliente;
 import com.example.demo.services.UserServices;
+import com.example.demo.util.QueryResult;
 import com.example.demo.util.RestResponse;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -39,6 +41,12 @@ public class UserController {
 	 	
 	return new RestResponse(HttpStatus.OK.value(), "Operación exitosa");
 
+	}
+	
+	@RequestMapping(value = "/getClientes", method = RequestMethod.GET)
+	public List<Cliente> getClientes() {
+		
+		return this.userServices.findAll();
 	}
 	
 	private boolean validate(Cliente cliente) {
