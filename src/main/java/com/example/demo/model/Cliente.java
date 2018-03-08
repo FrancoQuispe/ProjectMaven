@@ -15,7 +15,7 @@ public class Cliente extends EntidadPadre{
 	
 	@Column(name="nombre_cliente", nullable=false, length=30)
 	private String nombreCliente;
-	@Column(name="telefono_cliente", nullable=false, length=30)
+	@Column(name="telefono_cliente", nullable=false)
 	private String telefonoCliente;
 	public String getNombreCliente() {
 		return nombreCliente;
